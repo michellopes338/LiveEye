@@ -34,7 +34,7 @@ pip install -r requirements.txt
 1. Open a terminal and navigate to the project directory.
 2. Run the script with the desired parameters:
 ~~~
-python main.py
+python main.py --streamer cellbit
 ~~~
 3. The script will continuously monitor the livestream status. When the streamer goes live, the livestream will automatically open in your default web browser.
 
