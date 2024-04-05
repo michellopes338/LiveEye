@@ -1,4 +1,4 @@
-![bolinha_fofinha](https://github.com/michellopes338/LiveEye/assets/71197700/c855a35d-bf61-480f-956e-0e639e0e81c6)
+![bolinha_fofinha](https://github.com/michellopes338/LiveEye/assets/71197700/da5a0f0a-6897-4c98-9ea0-634975b89a5f)
 # LiveEye
 
 LiveEye is a Python script designed to monitor the status of a livestream and automatically open the stream when the streamer goes live.
