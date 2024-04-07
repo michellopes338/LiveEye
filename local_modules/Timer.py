@@ -2,11 +2,13 @@ import dateparser
 from datetime import datetime
 
 class Timer():
-    def __init__(self, time: str) -> None:
-        self.timedelta = datetime.now() - dateparser.parse(time)
-    
-    def to_trys(self):
-        return self.timedelta.seconds // 5
+    def __init__(self, time: str, wait: int) -> None:
+        self.__timedelta = datetime.now() - dateparser.parse(time)
+        self.__wait = wait
+
+    @property
+    def cycles(self):
+        return self.__timedelta.seconds // self.__wait
 
 if __name__ == '__main__':
     timer = Timer('5min')
