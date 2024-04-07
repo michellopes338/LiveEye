@@ -6,9 +6,9 @@ LiveEye is a Python script designed to monitor the status of a livestream and au
 ## Features
 - **Livestream Monitoring:** Continuously checks the status of the livestream to detect when the streamer starts broadcasting.
 - **Automatic Stream Opening:** Automatically opens the livestream in the default browser when the streamer goes live.
+- **Customizable Timeout:** Ability to set a timeout for how often the script checks the livestream status.
 
 ## Working Features
-- **Customizable Timeout:** Ability to set a timeout for how often the script checks the livestream status.
 - **Supports Multiple Platforms:** Designed to work with various livestreaming platforms.
 
 ## Getting Started
@@ -40,6 +40,7 @@ python main.py --streamer cellbit
 
 ## Configuration
 - **Timeout:** You can adjust the timeout duration by specifying the --timeout parameter when running the script. The default timeout is set to 10 minutes.
+- **Wait:** You can adjust how often the script checks the livestream status by specifying the --wait parameter when running the script. The default timeout is set to 5 seconds.
 
 ## Contributing
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.

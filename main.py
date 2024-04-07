@@ -5,7 +5,7 @@ from local_modules.Timer import Timer
 from sys import argv as arguments
 from halo import Halo
 
-def args(argument: str, default: Optional[str]) -> str:
+def args(argument: str, default: Optional[str] = None) -> str:
     try:
         argument_index = arguments.index(argument)
         return arguments[argument_index + 1]
@@ -17,6 +17,10 @@ def args(argument: str, default: Optional[str]) -> str:
 def main() -> None:
     timeout = args('--timeout', '10m')
     streamer = args('--streamer', 'rbiana')
+    wait = args('--wait', '5')
+
+    if wait.isdigit():
+        wait = int(wait)
 
     timer = Timer(timeout)
     livestream = LiveStream(streamer=streamer, timer=timer)
@@ -29,7 +33,7 @@ def main() -> None:
             livestream.open_livestream()
             return
 
-        sleep(5)
+        sleep(wait or 5)
     spinner.fail('Faz o L filho!! 🤡🫵')
 
 if __name__ == '__main__':  
