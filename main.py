@@ -3,6 +3,7 @@ from typing import Optional
 from local_modules.LiveStram import LiveStream
 from local_modules.Timer import Timer
 from sys import argv as arguments
+from halo import Halo
 
 def args(argument: str, default: Optional[str]) -> str:
     try:
@@ -19,17 +20,17 @@ def main() -> None:
 
     timer = Timer(timeout)
     livestream = LiveStream(streamer=streamer, timer=timer)
+    spinner = Halo(text=f'Esperando {streamer}', spinner='star', text_color='cyan')
     
+    spinner.start()
     for _ in range(livestream.total_trys):
         if livestream.is_live():
-            print(f'A {streamer} abriu live 😃👍')
+            spinner.succeed(f'{streamer} abriu live 😃👍')
             livestream.open_livestream()
             return
 
-        print(f'{streamer} ainda não abriu live 😔')
         sleep(5)
-    
-    print('Faz o L filho!! 🤡🫵')
+    spinner.fail('Faz o L filho!! 🤡🫵')
 
 if __name__ == '__main__':  
     main()
